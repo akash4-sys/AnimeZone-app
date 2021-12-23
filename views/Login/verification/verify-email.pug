@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    title Email Verification
+    meta(name='description' content='')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    style 
+      include ../../../public/Login-css/verify-email.css
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css')
+    link.logo(rel='icon' href='../../resources/Logo.png' type='image/x-icon')
+
+    div.container
+        img(src="../resources/verify.jpg", alt="Verify Image")
+        div.text Hey, Thanks for registering! A Verification email has been sent to #{email}. Please check the inbox.
+        br
+        br
+        p.text or Login Using
+        br
+        br
+        .brands
+          span.adjust
+            a.brand-hover.facebook(href="/auth/facebook")
+              i.fab.fa-facebook.fa-3x
+          span
+            a.brand-hover.googleplus(href="/auth/google")
+              i.fab.fa-google-plus.fa-3x
+          span
+            a.brand-hover.discord(href="/auth/discord")
+              i.fab.fa-discord.fa-3x
+        p.text Email still not recieved. It is possible that email could be detected as spam by some email providers. So, Please check your Spam folder.

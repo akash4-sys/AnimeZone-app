@@ -1,0 +1,105 @@
+*{
+  margin:0px;
+  padding:0px;
+}
+
+body {
+  overflow: hidden; /* Hide scrollbars */
+}
+
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0; 
+    left: 0;
+    background-image: url(../resources/sidenav2.jpg); 
+    background-size:cover;
+    /* background-attachment: fixed; */
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    transition: 0.5s; 
+}
+
+.sidenav a,h3 {
+  padding: 10px 13px 10px 32px;
+  text-decoration: none;
+  /* font-size: 25px; */
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+
+.heading{
+  width:100%;
+  display: flex;
+  background-color: darkslateblue;
+  padding-top: 10px;
+  padding-bottom: 17px;
+  position:sticky;
+  top:0px;
+}
+
+.first-child{
+  width:55%;
+  color:white;
+  margin-left: 10px;
+  font-size:25px;
+  padding-top: 16px;
+  padding-left: 20px;
+}
+
+.second-child{
+  width:45%;
+  color:white;
+  font-size:35px;
+  text-align:center;
+}
+
+.sidenav a:hover {
+  color: gray;
+  cursor:pointer;
+}
+
+.hover:hover{
+  color:gray;
+  cursor:pointer;
+}
+
+.topmost{
+  margin-top:10px;
+}
+
+.hover-CC{
+  color:white;
+}
+
+.hover-CC:hover{
+  color:gray;
+  cursor:pointer;
+}
+
+.mainbody{
+  width:100%;
+  display:flex;
+}
+
+.sidebar{
+  height:100%;
+  padding: 16px 25px 10px 15px;
+  width:2%;
+  text-decoration: none;
+  List-style: none;
+  background-color: darkslateblue;
+  color: white
+}
+
+li{
+  padding-bottom:50px;
+}
+
+#main {
+  transition: margin-left .5s;
+}

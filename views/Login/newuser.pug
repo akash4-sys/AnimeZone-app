@@ -1,0 +1,55 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  title Sign UP
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link.logo(rel='icon' href='../resources/Logo.png' type='image/x-icon')
+  style 
+    include ../../public/Login-css/newuser.css
+section.mainbody
+  form.left(action='/login')
+
+    if typeof errors != 'undefined'
+      each err in errors
+        div.alert
+          span(class="closebtn" onclick="this.parentElement.style.display='none';") &times;
+          div= err 
+    if messages.info
+      div.alert
+          span(class="closebtn" onclick="this.parentElement.style.display='none';") &times;
+          div= messages.info
+      if messages.error
+      div.alert.error_css
+          span(class="closebtn" onclick="this.parentElement.style.display='none';") &times;
+          div= messages.error
+    button.back Sign In
+
+  form#register.right(action='/login/signup' method='POST')
+
+    h1 Sign Up
+    h3.nametag Full Name
+    input#name.name(type='text' placeholder='Name...' required='' name='name' minLength='3' value = name)
+
+    h3.emailtag.nametag Email
+    input#email.name(type='email' placeholder='Email...' required='' name='email' value = email)
+
+    h3.passtag.nametag Username
+    input#username.name(type='text' placeholder='Username...' required='' name='username' minLength='3' value= username)
+
+    h3.nametag.passtag Password
+    input#password.name(type='password' placeholder='**********' required='' name='password' value = password)
+
+    h3.nametag.retypetag Confirm Password
+    input#cpassword.name(type='Password' placeholder='**********' required='' name='cpassword' value = cpassword)
+
+    p.rememberme
+      input.checkbox.no-animation(type='checkbox' name='rememberme' checked='checked' required='')
+      |  I agree to the
+      a.terms(href='#') Terms of Use
+
+    button.submit(type='submit') Sign Up
+
+script 
+  //- include ../../public/javascript/newuser.js

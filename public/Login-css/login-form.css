@@ -1,0 +1,254 @@
+﻿/* darkslateblue 72, 61, 139 */
+*{
+    margin:0px;
+    padding:0px;
+    border:none;
+}
+
+html{
+    background-image:url(../../resources/loginbg.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.container{
+    background-color:rgba(0,0,0,0.7); 
+    padding: 2%;
+    border-radius: 6px;
+    /* margin: 5% 37% 3% 37%; */
+    width:25%;
+    /* height:568px; */
+    height:fit-content;
+    box-shadow: 0 0 28px rgb(0, 0, 0);
+    position: absolute;
+    top: 8%;
+    right: 37%;
+    bottom: 3%;
+    left: 37%;
+}
+
+/* .formlogo{
+    height:86px;
+    padding-left:32%;
+    padding-bottom:13%;
+    padding-top:7%;
+} */
+
+.formlogo{
+    background-image:url(../../resources/Logo.png);
+    background-repeat:no-repeat;
+    background-size:contain;
+    margin:5% 30% 11%;
+    padding:13%;
+    border-radius:28px;
+}
+
+.email{
+    background-image:url(../../resources/email.png);
+}
+
+.email:hover{
+    background-image:url(../../resources/hemail.png)
+}
+
+.pass{
+    background-image:url(../../resources/lock.png);
+}
+
+.pass:hover{
+    background-image:url(../../resources/hlock.png);
+}
+
+.icon{
+    background-repeat:no-repeat;
+    background-position-y: 15px;
+    background-position-x: 10px;
+}
+
+.usertext{
+    padding:10px;
+    padding-left:11%;
+    border-radius:6px;
+    width:87%;
+    height:35px;
+}
+
+.usertext:focus{
+    box-shadow: 0px 0px 17px 19px darkslateblue;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid darkslateblue;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    background-color: darkslateblue;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  
+  /* .rememberme +  .rememberme{
+    margin-top: 1em;
+  } */
+
+.rememberme{
+    color:white;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+    line-height: 1.1;
+    margin-bottom :-9px;
+}
+
+/* .checkbox{
+    border:solid 1px darkslateblue;
+} */
+
+/* .checkbox:hover{
+    width:15px;
+    height:15px;
+} */
+
+.submit{
+    width:101%;
+    height:45px;
+    background-color:darkslateblue;
+    border-radius: 4px;
+    color:white;
+}
+
+.submit:hover{
+    width:103%;
+    height:48px;
+    color:gray;
+    cursor: pointer;
+}
+
+.link{
+    text-decoration: none;
+    color:white;
+}
+
+.link:hover{
+    color:gray;
+}
+
+.links{
+    display: flex;
+}
+
+.right{
+    width:50%;
+}
+
+.left{
+    width:50%;
+    text-align:end;
+}
+
+.text{
+    color:white;
+    text-align: center;
+}
+
+.brands{
+    justify-content:center;
+}
+
+span{
+    background-color: white;
+    border-radius: 50%;
+    padding-top: 26px;
+    margin-left:19%;
+}
+
+.facebook{
+    color:#3b5998;
+    background-color:transparent;
+    margin-left:-1px;
+    margin-right:-1px;
+}
+
+.brand-hover:hover{
+    cursor:pointer;
+}
+
+.googleplus{
+    background-color:transparent;
+    color: #db4a39;
+}
+
+
+.discord-span{
+    border-radius:0%;
+}
+
+.discord{
+    background-color:transparent;
+    color: #5865F2;
+} 
+
+/* .discord{
+    background:url(../../resources/discord.png);
+    height:100px;
+    width:100px;
+}  */
+
+/* flash messsages */
+.alert {
+  padding: 16px;
+  /* margin: 26px; */
+  border-radius: 16px;
+  color: white;
+  background-color: darkgoldenrod;
+  width:92%;
+  margin-bottom:3%;
+}
+
+.success{
+    background-color:forestgreen;
+}
+  
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+  
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
+}
+
+*{
+    margin:0px;
+    padding:0px;
+    border:none;
+}

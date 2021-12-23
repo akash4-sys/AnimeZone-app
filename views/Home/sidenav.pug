@@ -1,0 +1,80 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  title DashBoard
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  style
+    include ../../public/Home/sidenav.css
+    block styles
+
+  link.logo(rel='icon' href='../resources/Logo.png' type='image/x-icon')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css')
+  body 
+    #mySidenav.sidenav
+      .heading 
+        .first-child
+          p AnimeZone
+        .second-child
+          a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+      h3.topmost SUBSCRIBED
+        a(href='#') Anime
+        a(href='#') Manga
+        a(href='#') Manhwa
+      h3 CREATE
+        a(href='#') Writings
+        a(href='#') Animation
+        a(href='#') Translations
+        a(href='#') Layout
+        a(href='#') Published
+        a(href='#') Pending
+        a(href='#') Know More
+      h3 PAYMENTS
+        a(href='#') Subscriptions
+        a(href='#') Gift Inventory
+        a(href='#') Billing
+      h3 USER SETTINGS
+        a(href='#') My Account
+        a(href='#') User Profile
+        a(href='#') Privacy and saftey
+        a(href='#') Connnections
+        a(href='#') Chat settings
+        a(href='#') Contact Us
+        a(href='/auth/logout') LogOut
+
+    .mainbody 
+      ul.sidebar.first-section
+        li 
+          span.hover(onclick='openNav()')
+            <i class="fas fa-bars fa-2x"></i>
+        li
+          a(href='/')
+            <i class="fas fa-home fa-2x hover-CC"></i>
+        li
+          a(href='#')
+            <i class="fas fa-book-open fa-2x hover-CC"></i>
+        li
+          a(href='#')
+            <i class="fas fa-video fa-2x hover-CC"></i>
+        li
+          a(href='#')
+            <i class="fas fa-edit fa-2x hover-CC"></i>
+        li
+          a(href='#')
+            <i class="fas fa-comments fa-2x hover-CC"></i>
+        li 
+          span.hover(onclick='openNav()')
+            <i class="fas fa-money-check-alt fa-2x"></i>
+        li 
+          span(onclick='openNav()')
+            <i class="fas fa-user-cog fa-2x hover-CC"></i>
+        li
+          a(href='/auth/logout')
+            <i class="fas fa-sign-out-alt fa-2x hover-CC"></i>
+
+      #main
+        block content
+  script 
+    include ../../public/javascript/sidenav.js
+      

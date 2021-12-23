@@ -1,0 +1,104 @@
+@media only screen and (max-width: 1268px) {
+    .background{
+        width:130%;
+    }
+
+    .logo img{
+        width: 0%;
+        border-color: transparent;
+    }
+
+    .footer{
+        width:127%;
+    }
+
+    .contact{
+        width:128%;
+    }
+
+    .motot{
+        font-size:2vw;
+    }
+
+     .section
+    {
+        display: -webkit-inline-box;
+        margin-top:6%;
+    }
+}   
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 768px) {
+    .background{
+        background-position-x: center;
+    }
+
+    .footer{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .burger{
+        display: block;
+    }
+
+     .nav-list{   
+        flex-direction: column;
+        transition: all 0.3s ease-out;
+    }
+
+     .invisible{
+        opacity:0;
+    }
+
+     #search{
+        width:110%;
+    } 
+
+    .rightnav{
+        margin-bottom: 42%;
+    }
+
+    .nav-list li{
+        list-style:none;
+        padding: 5% ;
+    }
+
+    .motot{
+        font-size:2vw;
+    }
+
+     .section
+    {
+        display: -webkit-inline-box;
+        margin-top:6%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 440px) {
+
+    .burger{
+        margin-bottom:21%;
+    }
+
+    .rightnav{
+        margin-bottom: 21%;
+    }
+
+    .background{
+        width:133%;
+    }
+
+    .section
+    {
+        display:grid;
+        /* display: -webkit-inline-box;
+        margin-top:6%;
+        overflow-y: scroll; */
+    }
+
+    .main-body{
+        width:440px;
+    }
+}
