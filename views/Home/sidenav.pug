@@ -45,7 +45,7 @@ head
         a(href='/auth/logout') LogOut
 
     .mainbody 
-      ul.sidebar.first-section
+      ul.sidebar
         li 
           span.hover(onclick='openNav()')
             <i class="fas fa-bars fa-2x"></i>
@@ -78,4 +78,5 @@ head
         block content
   script 
     include ../../public/javascript/sidenav.js
+    include ../../public/javascript/home.js
 script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')

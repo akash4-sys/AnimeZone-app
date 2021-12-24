@@ -112,6 +112,8 @@
   position:absolute;
   top: 306px;
   left: 144px;
+  border:none;
+  transition: left .5s;
 }
 
 .live-btn-icon{
@@ -130,6 +132,7 @@
   position: absolute;
   top: 426px;
   left: 144px;
+  transition: left .5s;
 }
 
 .trending-watch:hover{
@@ -141,6 +144,7 @@
   position: absolute;
   top: 356px;
   left: 144px;
+  transition: left .5s;
 }
 
 .trending-subheading{
@@ -148,6 +152,7 @@
   position: absolute;
   top: 396px;
   left: 144px;
+  transition: left .5s;
 }
 
 .trending-options{
@@ -193,4 +198,16 @@
 
 .flickity-prev-next-button.next:hover{
   background-color:gray;
+}
+
+.Cards{
+  display:grid;
+  grid-template-columns: auto auto auto;
+  gap:10px;
+}
+
+.card{
+  border:3px solid black;
+  background-color:antiquewhite;
+  padding:50px;
 }

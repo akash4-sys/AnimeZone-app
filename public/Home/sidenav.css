@@ -4,7 +4,8 @@
 }
 
 body {
-  overflow: hidden; /* Hide scrollbars */
+  /* overflow:hidden; Hide all scrollbars */
+  overflow-x: hidden; /* Hide hroizontal scrollbar */
 }
 
 .sidenav {
@@ -102,5 +103,4 @@ li{
 
 #main {
   transition: margin-left .5s;
-  overflow:hidden;
 }
