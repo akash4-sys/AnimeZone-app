@@ -102,4 +102,5 @@ li{
 
 #main {
   transition: margin-left .5s;
+  overflow:hidden;
 }

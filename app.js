@@ -23,7 +23,8 @@ const app = express();
 app.use(session({
     secret:'9809060498801mmtalipmneroc4tqr5nqu74r6bhjhgvappsthifnsdnflkuwioersalkjrandosdmsfdkldfas',
     resave:false,
-    saveUninitialized:true
+    saveUninitialized:true,
+    store: MongoStore.create({mongoUrl: 'mongodb://localhost/animezone'})
 }));
 
 app.use(express.urlencoded({extended:false}));

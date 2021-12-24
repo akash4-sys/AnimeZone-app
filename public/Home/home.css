@@ -91,3 +91,106 @@
     width: 69px;
     border-radius: 8px;
 }
+
+.trending{
+  background-image: url(../resources/trending.png);
+  width:100%;
+  height:60%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.live-btn{
+  padding: 8px 20px;
+  margin: 7px 3px;
+  border-radius:8px;
+  background-color:chartreuse;
+  color:black;
+  cursor:pointer;
+  text-decoration: none;
+  font-size: 14px;
+  position:absolute;
+  top: 306px;
+  left: 144px;
+}
+
+.live-btn-icon{
+  margin-right:10px;
+}
+
+.trending-watch{
+  padding: 15px 25px;
+  margin: 7px 3px;
+  border-radius:8px;
+  background-color:darkslateblue;
+  color:white;
+  cursor:pointer;
+  text-decoration: none;
+  font-size: 25px;
+  position: absolute;
+  top: 426px;
+  left: 144px;
+}
+
+.trending-watch:hover{
+  color:gray;
+}
+
+.trending-heading{
+  color:white;
+  position: absolute;
+  top: 356px;
+  left: 144px;
+}
+
+.trending-subheading{
+  color: white;
+  position: absolute;
+  top: 396px;
+  left: 144px;
+}
+
+.trending-options{
+  position: absolute;
+  top: 348px;
+  right: 47px;
+}
+
+.carousel {
+  width:500px;
+}
+
+.carousel-cell {
+  width: 30%;
+  height: 134px;
+  margin-right: 10px;
+  border-radius: 5px;
+  counter-increment: gallery-cell;
+}
+
+.carousel-cell:before {
+  display: block;
+  line-height: 200px;
+}
+
+.flickity-page-dots{
+  opacity:0;
+}
+
+.flickity-prev-next-button.previous {
+  background-color: darkslateblue;
+  color: white;
+}
+
+.flickity-prev-next-button.previous:hover{
+  background-color:gray;
+}
+
+.flickity-prev-next-button.next{
+  background-color: darkslateblue;
+  color: white;
+}
+
+.flickity-prev-next-button.next:hover{
+  background-color:gray;
+}
