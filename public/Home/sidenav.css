@@ -89,12 +89,14 @@ body {
 
 .sidebar{
   height:100%;
-  padding: 16px 25px 10px 15px;
+  padding: 16px 16px 10px 11px;
   width:2%;
   text-decoration: none;
   List-style: none;
   background-color: darkslateblue;
-  color: white
+  color: white;
+  position: fixed;
+  top:0px;
 }
 
 li{
@@ -103,4 +105,5 @@ li{
 
 #main {
   transition: margin-left .5s;
+  margin-left: 55px;
 }

@@ -7,7 +7,7 @@
 }
 
 /* Links inside the navbar */
-.navbar a {
+.navbar a{
   float: left;
   font-size: 16px;
   color: white;
@@ -28,13 +28,13 @@
   border: none;
   outline: none;
   color: white;
-  padding: 22px 50px;
+  padding: 22px 54px;
   background-color: inherit;
   font-family: inherit; /* Important for vertical align on mobile phones */
   margin: 0; /* Important for vertical align on mobile phones */
 }
 
-/* Add a red background color to navbar links on hover */
+/* Add a background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: darkslateblue;
 }
@@ -59,7 +59,7 @@
 }
 
 /* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
+.dropdown-content a:hover,button:hover {
   background-color: #ddd;
 }
 
@@ -79,7 +79,7 @@
 #search{
     width: 557px;
     height: 61px;
-    margin-left: 268px;
+    margin-left: 264px;
     margin-right: 10px;
 }
 
@@ -95,7 +95,7 @@
 .trending{
   background-image: url(../resources/trending.png);
   width:100%;
-  height:60%;
+  height:500px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -200,14 +200,87 @@
   background-color:gray;
 }
 
+/*Adding a conditional classname can be achieved by this:
+      p#lblMessage(class=(status  ? 'text-success' : 'text-warning')) #{message} 
+  CHECK BOOKMARK FOR MORE DETAIL FROM STACK OVERFLOW*/
+
+.Cards-heading{
+  margin: 5% 0% 5% 3%;
+  display: flex;
+}
+
+.card-selector{
+    border-radius: 3px;
+    width: 176px;
+    background-color: #808080;
+    padding: 13px;
+    /* margin-left: 903px; */
+    padding-left: 77px;
+    font-size: x-large;
+    cursor: pointer;
+    position: relative;
+    /* left: 994px; */
+    right: -1000px;
+}
+
+.cards-selector-btn{
+  font-size: 20px;
+  background-color: #808080;
+  border: none;
+  color:white;
+  cursor: pointer;
+}
+
+.card-selector-content{
+  width: 266px;
+  right: 44px;
+  margin-top:13px;
+}
+
+.selector-opt{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+}
+
+.card-selector:hover {
+  background-color: darkslateblue;
+}
+
+.card-selector:hover .dropbtn {
+  background-color: darkslateblue;
+}
+
+.card-selector:hover .dropdown-content{
+  display:block;
+}
+
 .Cards{
-  display:grid;
-  grid-template-columns: auto auto auto;
-  gap:10px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 50px;
+  margin: 5% 3% 0% 3%;
 }
 
 .card{
   border:3px solid black;
   background-color:antiquewhite;
-  padding:50px;
+  height: 250px;
+  border-radius: 12px;
+  display:none;
+}
+
+.show{
+  display:block;
+}
+
+.selector-opt.active{
+  background-color: darkslateblue;
+  color: white;
 }

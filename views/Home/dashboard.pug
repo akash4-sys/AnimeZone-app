@@ -48,17 +48,41 @@ block content
                 .carousel-cell
                   img(src='../resources/trending (5).jpg' height='100%' width='100%')
 
+    .Cards-heading 
+      h1#Cards-heading Popular
+      .card-selector
+        button.dropbtn.cards-selector-btn Popular
+          <i class="fa fa-caret-down" style="margin-left:40px"></i>
+        .dropdown-content.card-selector-content#BtnContainer
+          button.selector-opt.active(onclick="filterSelection('Popular')") Popular
+          button.selector-opt(onclick="filterSelection('Ongoing')") Ongoing
+          button.selector-opt(onclick="filterSelection('Complete')") Complete
+          button.selector-opt(onclick="filterSelection('New')") New
+          button.selector-opt(onclick="filterSelection('OnBreak')") OnBreak
+
     .Cards
-      .card
-        h1 Ongoing Series
-      .card
-        h1 Ongoing Series
-      .card
-        h1 Ongoing Series
-      .card
-        h1 Ongoing Series
-      .card
-        h1 Ongoing Series
-      .card
-        h1 Ongoing Series
+      .card.filterDiv.New New
+        
+      .card.filterDiv.New New
+        
+      .card.filterDiv.OnBreak Onbreak
+        
+      .card.filterDiv.New New
+        
+      .card.filterDiv.Complete  Complete
+        
+      .card.filterDiv.Complete  Complete
+        
+      .card.filterDiv.OnBreak Onbreak
+        
+      .card.filterDiv.Ongoing Ongoing
+        
+      .card.filterDiv.OnBreak Onbreak
+        
+      .card.filterDiv.Ongoing Ongoing
+        
+      .card.filterDiv.Ongoing Ongoing
+        
+      .card.filterDiv.Complete  Complete
+        
     
