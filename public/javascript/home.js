@@ -1,15 +1,23 @@
 filterSelection("Popular")
 function filterSelection(c) {
-  var x, i;
+  document.getElementById("Cards-heading").innerHTML = c;
+  var x, i, filtername;
+  filtername = c;
   x = document.getElementsByClassName("filterDiv");
-  if (c == "Popular") c = "";
+  if (c == "Popular")
+    c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) 
         w3AddClass(x[i], "show");
-        // document.getElementById("Cards-heading").innerHTML = "heading";
   }
+  var tag = document.createElement("i");
+  document.getElementById("rename-filter").innerHTML = filtername;
+  var element = document.getElementById("rename-filter");
+  element.appendChild(tag);
+  tag.className = "fa fa-caret-down dropbtn-style";
+  // element.classList.add("fa-caret-down");
 }
 
 // Show filtered elements
