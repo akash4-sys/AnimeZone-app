@@ -57,3 +57,27 @@ for (var i = 0; i < btns.length; i++) {
 
   });
 }
+
+function darkmode(){
+
+  var body = document.getElementById("body");
+  body.classList.toggle("dark-mode");
+
+  var cardtxt = document.getElementsByClassName("card-read");
+  for(i = 0; i < cardtxt.length; i++) {
+    cardtxt[i].classList.toggle("dark-mode");
+    cardtxt[i].classList.toggle("dark-bg");
+  }
+
+  var cardtitle = document.getElementsByClassName("card-title");
+  var bookmark = document.getElementsByClassName("bookmark");
+  for(i = 0; i < cardtitle.length; i++) {
+    cardtitle[i].classList.toggle("dark-mode");
+    bookmark[i].classList.toggle("dark-color");
+  }
+
+  var filteroptions = document.getElementsByClassName("selector-opt")
+  for(i = 0; i < filteroptions.length; i++) {
+    filteroptions[i].classList.toggle("dark-filter");
+  }
+}

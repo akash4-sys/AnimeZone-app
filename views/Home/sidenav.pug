@@ -12,13 +12,13 @@ head
   link.logo(rel='icon' href='../resources/Logo.png' type='image/x-icon')
   link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css')
   link(rel='stylesheet' href='https://unpkg.com/flickity@2/dist/flickity.min.css')
-  body 
+  body#body
     #mySidenav.sidenav
       .heading 
         .first-child
           p AnimeZone
         .second-child
-          a.closebtn(href='javascript:void(0)' onclick='closeNav()') &times;
+          a.closebtn(href='javascript:void(0)' onclick='closeNav()' style='color:white') &times;
       h3.topmost SUBSCRIBED
         a(href='#') Anime
         a(href='#') Manga
@@ -42,6 +42,10 @@ head
         a(href='#') Connnections
         a(href='#') Chat settings
         a(href='#') Contact Us
+        a(style="color: black") Dark Mode
+          label.switch
+            <input type="checkbox">
+            span.slider.round(onclick="darkmode()")
         a(href='/auth/logout') LogOut
 
     .mainbody 

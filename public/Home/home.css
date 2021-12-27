@@ -239,6 +239,7 @@
 .card-selector-content{
   width: 266px;
   margin-top:11px;
+  right:0px;
 }
 
 .selector-opt{
@@ -320,8 +321,40 @@
 
 .card-read:hover{
   background-color:darkslateblue;
+  color:white;
 }
 
 .card-watch{
   margin-left:5px;
+}
+
+.dark-mode{
+  background-color: #202028;
+  color: #cdced3;
+}
+
+.dark-bg{
+  background-color:darkslateblue;
+}
+
+.dark-bg:hover{
+  background-color:purple;
+}
+
+.dark-color{
+  color:white;
+}
+
+.dark-color:hover{
+  color:purple;
+}
+
+.dark-filter{
+  background-color: #202028;
+  color: #cdced3;
+}
+
+.dark-filter:hover{
+  background-color: purple;
+  color: white;
 }
