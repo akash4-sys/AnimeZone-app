@@ -30,7 +30,7 @@ block content
         h4#trending-subheading.trending-subheading Mangasee123/Gogoanime - English | Japanese | Korean
         a#trending-watch.trending-watch(href="#") Watch
         .trending-options
-            .carousel(data-flickity='{ "autoPlay": true }')
+            .carousel(data-flickity='{ "autoPlay": true , "wrapAround": true}')
                 .carousel-cell
                   img(src='../resources/trending (4).jpg' height='100%' width='100%')
                 .carousel-cell
@@ -51,7 +51,7 @@ block content
     .Cards-heading#heading-ctn
       h1#Cards-heading Popular
       .card-selector
-        button.dropbtn.cards-selector-btn#rename-filter Popular
+        button.dropbtn.cards-selector-btn#rename-filter 
         .dropdown-content.card-selector-content#BtnContainer
           button.selector-opt.active(onclick="filterSelection('Popular')") Popular
           button.selector-opt(onclick="filterSelection('Ongoing')") Ongoing
@@ -227,5 +227,99 @@ block content
         p.card-text 4.5 &#9733;
           a.live-btn.card-read(href="#") Read
           a.live-btn.card-read.card-watch(href="#") Watch
-        
+
     
+    .Cards-heading#heading-ctn
+      h1#Cards-heading Popular Authors
+    
+    .Author-ctn
+      .carousel.Author-box(data-flickity='{ "freeScroll": true, "contain": true, "prevNextButtons": false, "pageDots": false, "wrapAround":true, "autoPlay":30000, "groupCells":3}')
+        .carousel-cell.authors
+          .animator-author
+            <i class="fas fa-play-circle fa-2x "></i>
+          img.author-icon(src='../resources/trending (4).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow
+
+        .carousel-cell.authors
+          .animator-author 
+            <i class="far fa-dot-circle fa-2x" style="color:limegreen"></i>
+          img.author-icon(src='../resources/trending (1).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow
+        .carousel-cell.authors
+          .animator-author
+            <i class="fas fa-play-circle fa-2x "></i>
+          img.author-icon(src='../resources/trending (2).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow
+        .carousel-cell.authors
+          .animator-author
+            <i class="fas fa-play-circle fa-2x "></i>
+          img.author-icon(src='../resources/trending (5).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow
+        .carousel-cell.authors
+          .animator-author 
+            <i class="far fa-dot-circle fa-2x" style="color:limegreen"></i>
+          img.author-icon(src='../resources/trending (6).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow
+        .carousel-cell.authors
+          .animator-author 
+            <i class="far fa-dot-circle fa-2x" style="color:limegreen"></i>
+          img.author-icon(src='../resources/trending (7).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow
+        .carousel-cell.authors
+          .animator-author 
+            <i class="far fa-dot-circle fa-2x" style="color:limegreen"></i>
+          img.author-icon(src='../resources/trending (8).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow
+        .carousel-cell.authors
+          .animator-author
+            <i class="fas fa-play-circle fa-2x "></i>
+          img.author-icon(src='../resources/trending (5).jpg' height='100%')
+          br
+          br
+          p(style="text-align:center") &#160;&#160;&#160;Author Name
+          br
+          p &#160;&#160;&#160;&#160;&#160;&#160;&#160;
+            <i class="far fa-dot-circle" style="color:limegreen"></i> 4.9OK Followers
+            a.live-btn.card-read(href="#" style="margin-left:26px") Follow

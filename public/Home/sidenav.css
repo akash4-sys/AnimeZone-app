@@ -174,3 +174,20 @@ input:checked + .slider:before {
   background-color: #202028;
   color: #cdced3;
 }
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(193 193 193);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: darkslateblue;
+}

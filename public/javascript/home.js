@@ -80,4 +80,9 @@ function darkmode(){
   for(i = 0; i < filteroptions.length; i++) {
     filteroptions[i].classList.toggle("dark-filter");
   }
+
+  var authordark = document.getElementsByClassName("authors")
+  for(i = 0; i < authordark.length; i++) {
+    authordark[i].classList.toggle("dark-author-hover");
+  }
 }

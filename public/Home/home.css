@@ -358,3 +358,47 @@
   background-color: purple;
   color: white;
 }
+
+.flickity-viewport{
+  height:236px;
+}
+
+.Author-box{
+  width:100%;
+  margin-bottom:5%;
+}
+
+.Author-ctn{
+  margin-right:3%;
+  margin-left:inherit;
+}
+
+.authors{
+  width: 20%;
+  padding-bottom:80px;
+}
+
+.author-icon{
+  border: 2px solid gray;
+  border-radius: 50%;
+  width: 36%;
+  height: 70%;
+  margin-left:82px;
+  margin-top:5px;
+}
+
+.authors:hover .author-icon{
+  border:3px solid darkslateblue;
+}
+
+.animator-author{
+  color:purple;
+  background-color:white;
+  border-radius: 50%;
+  position:absolute;
+  left:148px;
+}
+
+.dark-author-hover:hover .author-icon{
+  border:3px solid purple;
+}

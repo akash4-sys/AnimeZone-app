@@ -314,26 +314,55 @@ html{
   }
   
   .carousel-cell {
-    width: 66%;
+    width: 100%;
     height: 200px;
     margin-right: 10px;
-    /* background: #8C8; */
     border-radius: 5px;
     counter-increment: gallery-cell;
   }
   
-  /* cell number */
   .carousel-cell:before {
     display: block;
-    /* text-align: center; */
-    /* content: counter(gallery-cell); */
     line-height: 200px;
-    /* font-size: 80px;
-    color: white; */
   }
 
   .sectiontag{
       margin-bottom: 1%;
       margin-top:1%;
       padding:3%;
+  }
+
+  .flickity-prev-next-button.previous {
+    background-color: darkslateblue;
+    color: white;
+  }
+  
+  .flickity-prev-next-button.previous:hover{
+    background-color:gray;
+  }
+
+  .flickity-prev-next-button.next{
+    background-color: darkslateblue;
+    color: white;
+  }
+  
+  .flickity-prev-next-button.next:hover{
+    background-color:gray;
+  }
+
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgb(193 193 193);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: darkslateblue;
   }
