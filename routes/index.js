@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {LoggedIn, Guest} = require('../middleware/authorized');
+const User = require('../models/user');
 // const google_user = require('../models/google_user');
 
 router.get('/', (req, res) => {
@@ -23,11 +24,15 @@ router.get('/', (req, res) => {
 //Dashboard
 router.get('/dashboard', LoggedIn, async(req, res) => {
 
+    const user = await User.findOne({_id: req.user.id}).lean();
+    const discord_avatar = "https://cdn.discordapp.com/avatars/" + user.DiscordID + "/" + user.image + ".png";
     try{
 
         res.render('Home/dashboard', {
-            name:req.user.name,
-            username:req.user.username
+            user_name:user.username,
+            user_icon:user.image,
+            discordid:user.DiscordID,
+            discord_avatar
         });
 
     }catch(err){

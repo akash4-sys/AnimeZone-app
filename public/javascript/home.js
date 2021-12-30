@@ -86,3 +86,11 @@ function darkmode(){
     authordark[i].classList.toggle("dark-author-hover");
   }
 }
+
+function altimage()
+{
+  var tag = document.createElement("i");
+  var element = document.getElementById("api_image");
+  element.appendChild(tag);
+  tag.className = "fas fa-user";
+}

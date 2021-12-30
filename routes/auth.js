@@ -11,7 +11,7 @@ router.get('/google', passport.authenticate('google', {scope: ['profile', 'https
 router.get('/google/callback', passport.authenticate('google', {
     failureRedirect:'/login?api_login_error=true' }),
     async(req,res) => {
-        res.status(200).render('Home/dashboard');
+        res.status(200).redirect('/dashboard');
     }
 );
 
@@ -22,7 +22,7 @@ router.get('/facebook', passport.authenticate('facebook'));
 router.get('/facebook/callback', passport.authenticate('facebook', {
     failureRedirect:'/login?api_login_error=true'}),
     async(req,res) => {
-        res.status(200).render('Home/dashboard');
+        res.status(200).redirect('/dashboard');
     }
 )
 
@@ -32,7 +32,7 @@ router.get('/discord', passport.authenticate('discord'));
 router.get('/discord/callback', passport.authenticate('discord', {
     failureRedirect:'/login?api_login_error=true'}),
     async(req,res) => {
-        res.status(200).render('Home/dashboard');
+        res.status(200).redirect('/dashboard');
     }
 )
 

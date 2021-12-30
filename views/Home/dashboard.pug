@@ -20,8 +20,13 @@ block content
             a(href="#")
                 <i class="far fa-bell"></i>
         .icon
-            a(href="#")
-                <i class="fas fa-user"></i>
+            if discordid
+              img.navbar-image.api_image#api_image(src= discord_avatar onerror="altimage()")
+            else if user_icon
+              img.navbar-image.api_image#api_image(src= user_icon onerror="altimage()")
+            else
+              a(href="#")
+                  <i class="fas fa-user"></i>
         img.navbar-image(src='../resources/Logo.png' alt='logo')
     .trending
         button#live-btn.live-btn

@@ -402,3 +402,10 @@
 .dark-author-hover:hover .author-icon{
   border:3px solid purple;
 }
+
+.api_image{
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  margin-top: 10px;
+}

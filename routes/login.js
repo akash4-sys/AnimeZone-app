@@ -29,7 +29,7 @@ router.post('/',  passport.authenticate('user-login',{
     const user = await User.findOne({email: req.body.email});
     if(user.isVerified)
     {
-        res.status(200).render('Home/dashboard');
+        res.status(200).redirect('/dashboard');
     }
     else{
         res.status(403).render('Login/login-form', {
