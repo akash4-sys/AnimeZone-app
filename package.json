@@ -28,6 +28,8 @@
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.1.0",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "striptags": "^3.2.0",
+    "truncate": "^3.0.0"
   }
 }

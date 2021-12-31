@@ -7,6 +7,9 @@ const passport = require('passport');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const flash = require('express-flash');
+const striptags = require('striptags');
+const moment = require('moment');
+const truncate = require('truncate');
 require('./config/db');
 const MongoStore = require('connect-mongo');
 
@@ -38,10 +41,28 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Pug
 app.set('view engine', 'pug');
 
+//Method-Override
+app.use(methodOverride(function(req, res) {
+
+    if(req.body && typeof req.body === 'object' && '_method' in req.body) {
+
+        var method = req.body._method;
+        delete req.body._method;
+        return method;
+    }
+}));
+
+//Currently logged in
+app.use((req, res, next) => {
+    res.locals.user = req.user || null;
+    next();
+});
+
 //Routes
 app.use('/', require('./routes/index'));
 app.use('/auth', require('./routes/auth'));
 app.use('/login', require('./routes/login'));
+app.use('/dashboard/your-stories', require('./routes/dashboard/story'));
 
 app.get('*', (req,res) => {
     res.status(404).render('error/404');

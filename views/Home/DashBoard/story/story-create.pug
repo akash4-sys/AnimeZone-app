@@ -1,0 +1,22 @@
+extends ../../sidenav.pug
+block content
+    h3 Add Notes
+    .row
+      form.col.s3(action='/dashboard/your-stories/create-new' method='POST')
+        .row
+          .input-field
+            input#title(type='text' name='title' style="width:700px height:100px")
+            label(for='title') Title
+        .row
+          .input-field
+            select#status(name='status')
+              option(value='private' selected='') Private
+              option(value='published') Published
+            label(for='status') Status
+        .row
+          .input-field
+            h5 Create Your Note:
+            textarea(id="body" name='body' rows="20" cols="70")
+        .row
+          input.btn(type='submit' value='Save')
+          a.btn.orange(href='/dashboard/your-stories') Cancel

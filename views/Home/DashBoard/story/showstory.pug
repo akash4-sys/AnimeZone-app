@@ -1,0 +1,23 @@
+extends ../../sidenav.pug
+block content 
+    .row
+        .col.s12.m8
+    h3 #{story.title}
+      small
+        - var author = story.user._id.toString()
+        - var current_user = user._id.toString()
+        - var noteid = story._id
+        if author == current_user
+            a(href="/notes/edit/" + noteid, class="btn-floating halfway-fab blue")
+                i(class="fas fa-edit fa-small")
+    .card.story
+      .card-content
+        span.card-title #{moment(story.createdAt).format('DD-MM-YYYY hh:mm a',)}
+        div #{truncate(striptags(story.body))}
+    .col.s12.m4
+        .card.center-align
+            .card-content
+                span.card-title #{story.user.displayName}
+                img.circle.responsive-img.img-small(src= story.user.image)
+            .card-action
+                a(href='/notes/user/' + story.user._id) More From #{story.user.firstName}

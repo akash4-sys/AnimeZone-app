@@ -1,0 +1,32 @@
+extends ../../sidenav.pug
+block content 
+    h3 Welcome, #{name}
+    if story
+        p Here are your Stories
+        table
+            thead
+                tr 
+                    th Title
+                    th Date 
+                    th Status
+            tbody 
+                each val in story
+                    tr 
+                        td
+                            //- - noteid = val._id
+                            a(href = "/dashboard/your-stories/show-story/" + val._id) #{val.title}
+                        td #{moment(val.createdAt).format('DD-MM-YYYY hh:mm a',)}
+                        td 
+                            span.dash-status #{val.status}
+                        td
+                            a.btn.btn-float(href="/dashboard/your-stories/edit/" + val._id)
+                                i.fas.fa-edit
+                            form(action = "/dashboard/your-stories/delete-story/" + val._id , method = "POST" id = "delete-form")
+                                input(type = "hidden" name = "_method" value = "DELETE")
+                                button(type = "submit" class = "btn red")
+                                    i.fas.fa-trash
+    else 
+        h5 You have not created any notes, create one now
+    div.fixed-action-btn 
+            a(href="/dashboard/your-stories/create-new" class="btn-floating btn-large waves-effect waves-lightred")
+                i(class="fas fa-plus")
