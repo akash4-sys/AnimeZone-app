@@ -1,0 +1,106 @@
+.all{
+    background-color: rgba(0,0,0,0.2);
+    background-image:none;
+    height:100%;
+}
+
+.piechart-ctn{
+    border:3px solid white;
+    /* position: absolute;
+    top: 150px;
+    right: 50px; */
+    border-radius: 11px;
+    margin-top: 47px;
+    float: right;
+    margin-right: 115px;
+}
+
+#story-heading{
+    font-weight:200;
+}
+
+.empty{
+    left:100px;
+    height:400px;
+    width:700px;
+    background-image:url(../resources/reports.png);
+    background-color:white;
+}
+
+.story-index-heading{
+    padding-top: 60px;
+    padding-left: 50px;
+    font-size: 18px;
+    font-weight:100;
+}
+
+.btn-addmore{
+    padding: 10px;
+    position: absolute;
+    font-size: 23px;
+    right: 50px;
+    background-color: limegreen;
+    border-radius: 3px;
+    color: white;
+}
+
+.table-container{
+    padding-top:70px;
+    padding-left:50px;
+    padding-bottom:60px;
+    width:55%;
+    border-spacing:0px;
+} 
+
+th{
+    background: darkslateblue;
+    font-size: 18px;
+    color: #fff;
+    vertical-align: middle;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1;
+    padding: 22px 123px;
+    white-space: nowrap;
+    column-gap:0px;
+    row-gap:0px;
+}
+
+td{
+    text-align:center;
+    vertical-align: middle;
+    background-color:white;
+    text-decoration: none;
+    line-height:4;
+    color:gray;
+}
+
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+.colsm{
+    padding:22px 40px;
+}
+
+.story-title{
+    color:gray;
+    text-decoration: none;
+}
+
+.btn-edit{
+    color:gray;
+    cursor:pointer;
+}
+
+.btn-edit:hover{
+    color:darkslateblue;
+}
+
+.bottom-left{
+    border:0px 0px 10px 0px;
+}
+
+.bottom-right{
+    border:0px 0px 0px 10px;
+}

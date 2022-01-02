@@ -1,0 +1,43 @@
+.all{
+    background-image: url(../resources/nothing.jpg);
+    background-size:cover;
+    width:100vw;
+    height:100vh;
+}
+
+.container{
+    background-color: rgba(0,0,0,0.3);
+    padding: 2%;
+    border-radius: 6px;
+    width: 29%;
+    height: fit-content;
+    box-shadow: 0 0 28px rgb(0 0 0);
+    position: absolute;
+    top: 38%;
+    right: 37%;
+    color: white;
+    left: 35%;
+}
+
+.sub-heading{
+    color:white;
+    padding-top:52px;
+    padding-left:0px;
+}
+
+.btn-add-link{
+    float:right;
+}
+
+.btn-add{
+    background-color:limegreen;
+    border-radius:50%;
+    padding: 17px;
+    margin-top: -101px;
+    cursor:pointer;
+}
+
+.hover:hover{
+    background-color:darkslateblue;
+    color:gray;
+}

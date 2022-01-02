@@ -11,8 +11,16 @@ router.get('/', LoggedIn, async(req, res)=> {
 
         const story = await Story.find({user:req.user.id}).lean();
 
+        let database = [['Genre','Written'],['seinen',0],['mature',0],['popular',0],['isekai',0],['adventure',0]];
+
+        for(var i=1;i<6;i++)
+        {
+        	let value = story.filter(storyobj => storyobj.genre == database[i][0]);
+          database[i][1] = value.length;
+        }
         res.status(200).render("Home/DashBoard/story/story-index", {
             story,
+            database,
             moment: require('moment'),
         })
 

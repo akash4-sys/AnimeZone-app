@@ -18,7 +18,7 @@ head
         .first-child
           p AnimeZone
         .second-child
-          a.closebtn(href='javascript:void(0)' onclick='closeNav()' style='color:white') &times;
+          a.closebtn(href='javascript:void(0)' onclick='closeNav(); storyclose();' style='color:white') &times;
       h3.topmost SUBSCRIBED
         a(href='#') Anime
         a(href='#') Manga
@@ -51,7 +51,7 @@ head
     .mainbody 
       ul.sidebar
         li 
-          span.hover(onclick='openNav()')
+          span.hover(onclick='openNav(); storyopen();')
             <i class="fas fa-bars fa-2x"></i>
         li
           a(href='/')
@@ -83,4 +83,24 @@ head
   script 
     include ../../public/javascript/sidenav.js
     include ../../public/javascript/home.js
+    include ../../public/javascript/story-index.js
+    block scripts
 script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
+script(src="https://www.gstatic.com/charts/loader.js")
+
+
+
+//Google piechart story-index.pug
+
+
+script(type='text/javascript').
+  google.charts.load('current', {'packages':['corechart']});
+  google.charts.setOnLoadCallback(drawChart);
+  function drawChart() {
+
+  var dataobj = !{JSON.stringify(database)};  
+  var data = google.visualization.arrayToDataTable(dataobj);
+  var options = {'title':'Your Activity', 'width':550, 'height':400, 'is3D':true};
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+  }

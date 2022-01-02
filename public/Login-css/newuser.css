@@ -3,6 +3,11 @@
     padding:0px;
 }
 
+::selection{
+  background-color:darkslateblue;
+  color:white;
+}
+
 .mainbody{
     height:100%;
     width:100%;

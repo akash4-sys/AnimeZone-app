@@ -3,6 +3,11 @@
   padding:0px;
 }
 
+::selection{
+  background-color:darkslateblue;
+  color:white;
+}
+
 body {
   /* overflow:hidden; Hide all scrollbars */
   overflow-x: hidden; /* Hide hroizontal scrollbar */

@@ -15,6 +15,15 @@ block content
             label(for='status') Status
         .row
           .input-field
+            select#status(name='genre')
+              option(value='popular' selected='') Popular
+              option(value='seinen') seinen
+              option(value='adventure') adventure
+              option(value='mature') mature
+              option(value='isekai') isekai
+            label(for='genre') Genre
+        .row
+          .input-field
             h5 Create Your Note:
             textarea(id="body" name='body' rows="20" cols="70")
         .row

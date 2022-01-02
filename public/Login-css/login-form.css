@@ -5,6 +5,11 @@
     border:none;
 }
 
+::selection{
+    background-color:darkslateblue;
+    color:white;
+}
+
 html{
     background-image:url(../../resources/loginbg.jpg);
     background-repeat:no-repeat;

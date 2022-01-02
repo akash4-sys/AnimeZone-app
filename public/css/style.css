@@ -4,6 +4,11 @@
     
 }
 
+::selection{
+    background-color:darkslateblue;
+    color:white;
+}
+
 html{
     scroll-behavior: smooth;
 }

@@ -14,6 +14,11 @@ const storyschema = mongoose.Schema({
         default:'private',
         enum:['private', 'published']
     },
+    genre:{
+        type:String,
+        deafult:'popular',
+        enum:['isekai', 'adventure', 'mature', 'popular', 'seinen']
+    },
     email:String,
     username:String,
     createdAt:{

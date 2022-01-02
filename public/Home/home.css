@@ -1,3 +1,9 @@
+
+::selection{
+  background-color: darkslateblue;
+  color: #FFF;
+}
+
 .navbar {
   overflow: hidden;
   /* background-color: rgb(124, 124, 124); */
