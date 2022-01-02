@@ -32,7 +32,8 @@ router.get('/dashboard', LoggedIn, async(req, res) => {
             user_name:user.username,
             user_icon:user.image,
             discordid:user.DiscordID,
-            discord_avatar
+            discord_avatar,
+            url:'/'
         });
 
     }catch(err){

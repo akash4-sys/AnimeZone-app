@@ -2,6 +2,8 @@ extends ../../sidenav.pug
 block styles 
     include ../../../../public/story-css/no-story-index.css
     include ../../../../public/story-css/story-index.css
+block scripts 
+    include ../../../../public/javascript/story-index.js
 block content 
     if story
         .all
@@ -12,19 +14,19 @@ block content
             .piechart-ctn
                 div#piechart
             .piechart-ctn.empty#piechart-empty
-            table.table-container
+            table.table-container#table-ctn
                thead
                    tr 
-                       th(style="border-radius:10px 0px 0px 0px") Title
-                       th Date
-                       th Status
-                       th Genre
-                       th.colsm Edit
-                       th(style="border-radius:0px 10px 0px 0px").colsm Delete
+                       th.tabhead(style="border-radius:10px 0px 0px 0px") Title
+                       th.tabhead Date
+                       th.tabhead Status
+                       th.tabhead Genre
+                       th.tabhead.colsm Edit
+                       th.tabhead(style="border-radius:0px 10px 0px 0px").colsm Delete
                tbody 
                    each val in story
                        tr
-                           td#bottom-left
+                           td
                                a.btn-edit.story-title(href = "/dashboard/your-stories/show-story/" + val._id) #{val.title}
                            td #{moment(val.createdAt).format('DD-MM-YYYY hh:mm a',)}
                            td
@@ -33,7 +35,7 @@ block content
                            td
                                 a.btn-edit(href="/dashboard/your-stories/edit/" + val._id)
                                     i.fas.fa-edit
-                           td#bottom-right
+                           td
                                 form(action = "/dashboard/your-stories/delete-story/" + val._id , method = "POST" id = "delete-form")
                                     input(type = "hidden" name = "_method" value = "DELETE")
                                     button(type = "submit")

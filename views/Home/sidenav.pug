@@ -18,7 +18,7 @@ head
         .first-child
           p AnimeZone
         .second-child
-          a.closebtn(href='javascript:void(0)' onclick='closeNav(); storyclose();' style='color:white') &times;
+          a.closebtn(href='javascript:void(0)' onclick='closeNav();' style='color:white') &times;
       h3.topmost SUBSCRIBED
         a(href='#') Anime
         a(href='#') Manga
@@ -51,10 +51,10 @@ head
     .mainbody 
       ul.sidebar
         li 
-          span.hover(onclick='openNav(); storyopen();')
+          span.hover(onclick='openNav();')
             <i class="fas fa-bars fa-2x"></i>
         li
-          a(href='/')
+          a(href= url)
             <i class="fas fa-home fa-2x hover-CC"></i>
         li
           a(href='#')
@@ -81,9 +81,7 @@ head
       #main
         block content
   script 
-    include ../../public/javascript/sidenav.js
-    include ../../public/javascript/home.js
-    include ../../public/javascript/story-index.js
+    //- include ../../public/javascript/sidenav.js
     block scripts
 script(src='https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js')
 script(src="https://www.gstatic.com/charts/loader.js")

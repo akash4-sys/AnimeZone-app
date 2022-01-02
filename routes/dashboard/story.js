@@ -21,6 +21,7 @@ router.get('/', LoggedIn, async(req, res)=> {
         res.status(200).render("Home/DashBoard/story/story-index", {
             story,
             database,
+            url:'/dashboard',
             moment: require('moment'),
         })
 
@@ -33,7 +34,9 @@ router.get('/', LoggedIn, async(req, res)=> {
 
 router.get('/create-new', LoggedIn, (req, res)=> {
 
-    res.status(200).render("Home/DashBoard/story/story-create");
+    res.status(200).render("Home/DashBoard/story/story-create",{
+      url:'/dashboard/your-stories'
+    });
 });
 
 router.post('/create-new',LoggedIn, async(req, res)=> {
