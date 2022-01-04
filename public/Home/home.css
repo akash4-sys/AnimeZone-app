@@ -143,6 +143,7 @@
   top: 426px;
   left: 100px;
   transition: left .5s;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
 .trending-watch:hover{
@@ -232,6 +233,7 @@
     position: absolute;
     /* left: 994px; */
     right: 39px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
 .cards-selector-btn{
@@ -323,6 +325,7 @@
   padding: 4px 12px 4px 12px;
   position:unset;
   background-color:rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
 }
 
 .card-read:hover{

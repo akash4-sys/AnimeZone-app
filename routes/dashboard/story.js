@@ -34,9 +34,11 @@ router.get('/', LoggedIn, async(req, res)=> {
 
 router.get('/create-new', LoggedIn, (req, res)=> {
 
-    res.status(200).render("Home/DashBoard/story/story-create",{
-      url:'/dashboard/your-stories'
-    });
+  res.status(200).render("Home/DashBoard/story/story-create",{
+    url:'/dashboard/your-stories',
+    username:req.user.username
+  });
+
 });
 
 router.post('/create-new',LoggedIn, async(req, res)=> {
