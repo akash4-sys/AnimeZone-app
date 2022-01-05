@@ -1,23 +1,67 @@
-extends ../../sidenav.pug
-block content 
-    .row
-        .col.s12.m8
-    h3 #{story.title}
-      small
-        - var author = story.user._id.toString()
-        - var current_user = user._id.toString()
-        - var noteid = story._id
-        if author == current_user
-            a(href="/notes/edit/" + noteid, class="btn-floating halfway-fab blue")
-                i(class="fas fa-edit fa-small")
-    .card.story
-      .card-content
-        span.card-title #{moment(story.createdAt).format('DD-MM-YYYY hh:mm a',)}
-        div #{truncate(striptags(story.body))}
-    .col.s12.m4
-        .card.center-align
-            .card-content
-                span.card-title #{story.user.displayName}
-                img.circle.responsive-img.img-small(src= story.user.image)
-            .card-action
-                a(href='/notes/user/' + story.user._id) More From #{story.user.firstName}
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        style 
+            include ../../../../public/story-css/showstory.css
+        link(rel='icon' href='../../../resources/Logo.png' type='image/x-icon')
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css')
+        title Story Editor
+    body#body
+        nav.navbar.navbar-expand-lg.navbar-dark.bg-website
+            .container-fluid
+                a.navbar-brand(href='/')
+                    img.rounded(src="../../../resources/Logo.png" alt="animezone" width="40" height="24")
+                button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+                    span.navbar-toggler-icon
+                #navbarSupportedContent.collapse.navbar-collapse
+                    ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                        li.nav-item
+                            a.nav-link.text-light(aria-current='page' href='/dashboard') Home
+                        li.nav-item
+                            a.nav-link.text-light(href='/dashboard/your-stories') My Stories
+                    .nav-item.dropdown.dropdown-change
+                        a#navbarDropdown.dropdown-toggle.text-light.nav-link(href='#' role='button' data-bs-toggle='dropdown' aria-expanded='false' style="padding-left:0px") Hello, #{story.user.username}
+                        ul#dropmenu.dropdown-menu(aria-labelledby='navbarDropdown')
+                            li
+                                a.dropdown-item(href='#') Account
+                            li
+                                a.dropdown-item(href='#') Notifications
+                            li
+                                a.dropdown-item(href='#') Edit Profile
+                            li
+                                a.dropdown-item(href='#') My team
+                            li
+                                a.dropdown-item(href='#')   Dark Mode
+                                    label.switch
+                                        <input type="checkbox">
+                                        span.slider.round(onclick="darkmode()")
+                            li
+                                hr.dropdown-divider
+                            li
+                                a.dropdown-item(href='/auth/logout') Logout
+                                     <i class="fas fa-sign-out-alt logout-icon"></i>
+
+        .main-area.w-75.p-3.mt-5.mx-auto.mb-5
+            h3 #{story.title}
+            .sub-heading#id
+                h6(style="font-weight:400") Username: #{story.username}  &#160;| &#160; Genre: #{story.genre}   &#160;| &#160;  Status: #{story.status}
+                h6(style="font-weight:400").datetime Date: #{moment(story.createdAt).format('DD-MM-YYYY hh:mm a',)}
+            div(style="height:30px")
+            -var htmlbody = story.body
+            textarea(id="ckeditor" name='body' onload='editor(htmlbody)')
+            div(style="height:15px")
+            .d-grid.gap-2.d-md-flex.justify-content-md-end
+                a.btn.btn-primary.me-md-2.box-shadow(href="/dashboard/your-stories/edit/" + story._id  style="color:white; background-color:darkslateblue") Edit
+
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous')
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.17.1/ckeditor.js" integrity="sha512-VXEKi5eNc7ECuyIueuledlqeUWiJ7hcxBe9fnsCiVzeZ0XwJxAPemnq01/LBIBnp3i0szhvKNd9Us7fqNPsRmQ==" crossorigin="anonymous" referrerpolicy="no-referrer")
+    script 
+        include ../../../../public/javascript/showstory.js
+    script.
+        window.onload = function() {
+            var body = !{JSON.stringify(storybody)};
+            CKEDITOR.instances.ckeditor.setData(body);
+        }

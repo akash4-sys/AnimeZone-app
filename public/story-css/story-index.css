@@ -6,9 +6,6 @@
 
 .piechart-ctn{
     border:3px solid white;
-    /* position: absolute;
-    top: 150px;
-    right: 50px; */
     border-radius: 11px;
     margin-top: 47px;
     float: right;
@@ -22,14 +19,14 @@
 .empty{
     left:100px;
     height:400px;
-    width:700px;
+    width:685px;
     background-image:url(../resources/reports.png);
     background-color:white;
 }
 
 .story-index-heading{
     padding-top: 60px;
-    padding-left: 50px;
+    padding-left: 58px;
     font-size: 18px;
     font-weight:100;
 }
@@ -47,19 +44,11 @@
 }
 
 .table-container{
-    padding-top:70px;
+    padding-top:35px;
     padding-left:50px;
     padding-bottom:60px;
     width:55%;
     border-spacing:0px;
-    /* margin-top: 506px;
-    margin-left: 50px;
-    margin-bottom: 60px;
-    width: 55%;
-    border-spacing: 0px;
-    border: 2px solid white;
-    border-radius: 10px;
-    border-top-color: darkslateblue; */
 } 
 
 th{
@@ -119,19 +108,146 @@ th, td {
     padding:22px 104px;
 }
 
-.lm{
-    padding:22px 123px;
-}
-
 .colsm-opennav{
-    padding:22px 20px;
-}
-
-.colsm-closenav{
-    padding:22px 40px;
+    padding:22px 23px;
 }
 
 .dark-mode{
     background-color: #202028;
     color: #cdced3;
 }
+
+.table-row{
+  display:none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 22px 54px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: darkslateblue;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover,button:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.Cards-heading{
+  margin: 32% 0% 0% 3%;
+  display: flex;
+}
+
+#Cards-heading{
+  margin:10px;
+  font-weight: 200;
+}
+
+.card-selector{
+    border-radius: 3px;
+    width: 176px;
+    background-color:rgba(0,0,0,0.2);
+    padding: 13px;
+    padding-left: 77px;
+    font-size: x-large;
+    cursor: pointer;
+    position: absolute;
+    right: 40px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+}
+
+.cards-selector-btn{
+  font-size: 20px;
+  background-color:rgba(0,0,0,-0.8);
+  border: none;
+  color:white;
+  cursor: pointer;
+}
+
+.card-selector-content{
+  width: 266px;
+  margin-top:11px;
+  right:0px;
+}
+
+.selector-opt{
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+}
+
+.card-selector:hover {
+  background-color: darkslateblue;
+}
+
+.card-selector:hover .dropbtn {
+  background-color: darkslateblue;
+}
+
+.show{
+  display:table-row;
+}
+
+.card-selector:hover .dropdown-content{
+  display:block;
+}
+
+.selector-opt.active{
+  background-color: darkslateblue;
+  color: white;
+}
+
+.dropbtn-style{
+  margin-left:40px;
+}
+
+.dark-filter{
+  background-color: #202028;
+  color: #cdced3;
+}
+
+.dark-filter:hover{
+  background-color: purple;
+  color: white;
+}
+

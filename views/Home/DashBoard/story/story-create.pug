@@ -1,18 +1,19 @@
 doctype html
 html
-head
-    meta(charset='utf-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1')
-    style 
-        include ../../../../public/story-css/story-create.css
-    link(rel='icon' href='../../resources/Logo.png' type='image/x-icon')
-    link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous')
-    title Story Editor
+    head
+        meta(charset='utf-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        style 
+            include ../../../../public/story-css/story-create.css
+        link(rel='icon' href='../../../resources/Logo.png' type='image/x-icon')
+        link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3' crossorigin='anonymous')
+        link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css')
+        title Story Editor
     body#body
         nav.navbar.navbar-expand-lg.navbar-dark.bg-website
             .container-fluid
                 a.navbar-brand(href='/')
-                    img.rounded(src="../../resources/Logo.png" alt="animezone" width="40" height="24")
+                    img.rounded(src="../../../resources/Logo.png" alt="animezone" width="40" height="24")
                 button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
                     span.navbar-toggler-icon
                 #navbarSupportedContent.collapse.navbar-collapse
@@ -41,38 +42,39 @@ head
                                 hr.dropdown-divider
                             li
                                 a.dropdown-item(href='/auth/logout') Logout
-
+                                     <i class="fas fa-sign-out-alt logout-icon"></i>
+    
         .main-area.w-75.p-3.mt-5.mx-auto.mb-5
             h3 Write, Share & Publish
             h6 Write and share your work in real time. Our online editor supports every English, French, German, Korean, and other languages. Connect with your team using Chatter.
-
+    
             form(action='/dashboard/your-stories/create-new' method='POST')
                 div(style="height:20px")
                 .input-group.mb-3
-                    input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1' value=username required='')
+                    input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1' value=username required='' name="username")
                     div(style="width: 40px")
                     input.form-control(type='text' placeholder='Title' aria-label='Username' aria-describedby='basic-addon1' name="title" required='')
                 .input-group.mb-3
                     select#inputGroupSelect02.form-select(name="genre")
-                        option(value='popular' selected='') Popular
-                        option(value='seinen') Seinen
-                        option(value='adventure') Adventure
-                        option(value='mature') Mature
-                        option(value='isekai') Isekai
+                        option(value='Popular' selected='') Popular
+                        option(value='Seinen') Seinen
+                        option(value='Adventure') Adventure
+                        option(value='Mature') Mature
+                        option(value='Isekai') Isekai
                     label.input-group-text(for='inputGroupSelect02') Genre
                 .input-group.mb-3
                     select#inputGroupSelect02.form-select(name="status")
-                        option(value='private' selected='') Private
-                        option(value='published') Publish
+                        option(value='Private' selected='') Private
+                        option(value='Published') Publish
                     label.input-group-text(for='inputGroupSelect02') Status
-
+    
                 textarea(id="ckeditor" name='body')
-
+    
                 div(style="height:15px")
                 .d-grid.gap-2.d-md-flex.justify-content-md-end
                     button.btn.btn-primary.btn-success.me-md-2.box-shadow(type='submit') Save
                     a.btn.btn-primary.btn-danger.box-shadow(href='/dashboard/your-stories' role='button') Cancel
-
+    
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js' integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p' crossorigin='anonymous')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.17.1/ckeditor.js" integrity="sha512-VXEKi5eNc7ECuyIueuledlqeUWiJ7hcxBe9fnsCiVzeZ0XwJxAPemnq01/LBIBnp3i0szhvKNd9Us7fqNPsRmQ==" crossorigin="anonymous" referrerpolicy="no-referrer")
     script 

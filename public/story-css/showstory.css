@@ -95,11 +95,11 @@ input:checked + .slider:before {
 }
 
 .dark-item{
-  background-color: purple !important;
+    color:#cdced3 !important;
 }
 
 .dark-item:hover{
-    color:#202028 !important;
+    background-color: purple !important;
 }
 
 ::-webkit-scrollbar {
@@ -121,4 +121,14 @@ input:checked + .slider:before {
 
 .logout-icon{
   margin-left:15px;
+}
+
+.sub-heading{
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 42%;
+}
+
+.cke_contents{
+  background-color:purple !important;
 }

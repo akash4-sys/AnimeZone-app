@@ -4,19 +4,32 @@ block styles
     include ../../../../public/story-css/story-index.css
 block scripts 
     include ../../../../public/javascript/story-index.js
-block content 
-    if story
+block content
+    if story.length > 0
         .all
             .story-index-heading
                 h1#story-heading Overview 
-                    a(href="/dashboard/your-stories/create-new" class="btn-addmore hover")
+                    a#addmore(href="/dashboard/your-stories/create-new" class="btn-addmore hover")
                         i(class="fas fa-plus") &#160;&#160;&#160;Add Story
-            .piechart-ctn
+            .piechart-ctn#piechart-ctn
                 div#piechart
             .piechart-ctn.empty#piechart-empty
+
+            .Cards-heading#heading-ctn
+                h1#Cards-heading All
+                .card-selector#selector
+                    button.dropbtn.cards-selector-btn#rename-filter
+                    .dropdown-content.card-selector-content#BtnContainer
+                        button.selector-opt.active(onclick="filterSelection('All')") All
+                        button.selector-opt(onclick="filterSelection('Popular')") Popular
+                        button.selector-opt(onclick="filterSelection('Mature')") Mature
+                        button.selector-opt(onclick="filterSelection('Seinen')") Seinen
+                        button.selector-opt(onclick="filterSelection('Adventure')") Adventure
+                        button.selector-opt(onclick="filterSelection('Isekai')") Isekai
+
             table.table-container#table-ctn
                thead
-                   tr 
+                   tr
                        th.tabhead(style="border-radius:10px 0px 0px 0px") Title
                        th.tabhead Date
                        th.tabhead Status
@@ -25,12 +38,12 @@ block content
                        th.tabhead(style="border-radius:0px 10px 0px 0px").colsm Delete
                tbody 
                    each val in story
-                       tr
+                       tr.table-row.filterDiv(class=""+val.genre)
                            td
                                a.btn-edit.story-title(href = "/dashboard/your-stories/show-story/" + val._id) #{val.title}
                            td #{moment(val.createdAt).format('DD-MM-YYYY hh:mm a',)}
                            td
-                               span.dash-status #{val.status}
+                               span #{val.status}
                            td #{val.genre}
                            td
                                 a.btn-edit(href="/dashboard/your-stories/edit/" + val._id)

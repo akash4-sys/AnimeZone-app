@@ -3,6 +3,7 @@ const router = express.Router();
 const {LoggedIn, Guest} = require('../../middleware/authorized');
 const mongoose = require('mongoose');
 const Story = require('../../models/story');
+const { Strategy } = require('passport-local');
 
 
 router.get('/', LoggedIn, async(req, res)=> {
@@ -11,7 +12,7 @@ router.get('/', LoggedIn, async(req, res)=> {
 
         const story = await Story.find({user:req.user.id}).lean();
 
-        let database = [['Genre','Written'],['seinen',0],['mature',0],['popular',0],['isekai',0],['adventure',0]];
+        let database = [['Genre','Written'],['Seinen',0],['Mature',0],['Popular',0],['Isekai',0],['Adventure',0]];
 
         for(var i=1;i<6;i++)
         {
@@ -62,13 +63,13 @@ router.get('/show-story/:id', LoggedIn, async (req, res) => {
     try{
   
       let story = await Story.findById(req.params.id).populate('user').lean();
-  
       if(!story){
         return res.render('error/404');
       }
   
       res.render('Home/DashBoard/story/showstory',{
         story,
+        storybody: story.body,
         moment: require('moment'),
         striptags: require('striptags'),
         truncate: require('truncate')
