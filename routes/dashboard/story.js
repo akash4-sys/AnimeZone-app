@@ -36,11 +36,8 @@ router.get('/', LoggedIn, async(req, res)=> {
 router.get('/create-new', LoggedIn, (req, res)=> {
 
   res.status(200).render("Home/DashBoard/story/story-create",{
-
     url:'/dashboard/your-stories',
-    username:req.user.username,
-    posturl:'/dashboard/your-stories/create-new'
-
+    username:req.user.username
   });
 
 });
@@ -91,7 +88,6 @@ router.get('/edit/:id', LoggedIn, async (req, res) => {
 
     try {
       const story = await Story.findOne({_id: req.params.id,}).lean();
-      let data = ['Seinen','Mature','Isekai','Adventure','Popular'];
   
       if (!story) {
         return res.render('error/404');
@@ -103,13 +99,8 @@ router.get('/edit/:id', LoggedIn, async (req, res) => {
 
       } else {
 
-        var url = '/dashboard/your-stories/updated/' + story._id;
-        res.render('Home/DashBoard/story/story-create', {
+        res.render('Home/DashBoard/story/edit-story', {
           story,
-          data,
-          username:req.user.username,
-          posturl:url,
-          storybody:story.body
         });
 
       }

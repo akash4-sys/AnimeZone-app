@@ -48,49 +48,26 @@ html
             h3 Write, Share & Publish
             h6 Write and share your work in real time. Our online editor supports every English, French, German, Korean, and other languages. Connect with your team using Chatter.
     
-            form(action=posturl method='POST')
-                if story !== 'undefined'
-                    input(type="hidden", name="_method" value = 'PUT')
+            form(action='/dashboard/your-stories/create-new' method='POST')
                 div(style="height:20px")
                 .input-group.mb-3
-
-                    if typeof story !== 'undefined'
-                        input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1' value=story.username required='' name="username")
-                        div(style="width: 40px")
-                        input.form-control(type='text' placeholder='Title' aria-label='Username' aria-describedby='basic-addon1' name="title" required='' value=story.title)
-                    else
-                        input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1' value=username required='' name="username")
-                        div(style="width: 40px")
-                        input.form-control(type='text' placeholder='Title' aria-label='Username' aria-describedby='basic-addon1' name="title" required='')
-
+                    input.form-control(type='text' placeholder='Username' aria-label='Username' aria-describedby='basic-addon1' value=username required='' name="username")
+                    div(style="width: 40px")
+                    input.form-control(type='text' placeholder='Title' aria-label='Username' aria-describedby='basic-addon1' name="title" required='')
                 .input-group.mb-3
                     select#inputGroupSelect02.form-select(name="genre")
-                        if typeof story !== 'undefined'
-                            -for(var i=0;i<5;i++)
-                                if story.genre == data[i]
-                                    option(value=story.genre selected='') #{story.genre}
-                                    - continue;
-                                option(value=data[i]) #{data[i]}
-                        else 
-                            option(value='Popular' selected='') Popular
-                            option(value='Seinen') Seinen
-                            option(value='Adventure') Adventure
-                            option(value='Mature') Mature
-                            option(value='Isekai') Isekai
-
+                        option(value='Popular' selected='') Popular
+                        option(value='Seinen') Seinen
+                        option(value='Adventure') Adventure
+                        option(value='Mature') Mature
+                        option(value='Isekai') Isekai
                     label.input-group-text(for='inputGroupSelect02') Genre
                 .input-group.mb-3
                     select#inputGroupSelect02.form-select(name="status")
-                        if typeof story !== 'undefined'
-                            if story.genre == 'Private'
-                                option(value='Private' selected='') Private
-                            else 
-                                option(value='Published' selected='') Publish
-                        else
-                            option(value='Private' selected='') Private
-                            option(value='Published') Publish
+                        option(value='Private' selected='') Private
+                        option(value='Published') Publish
                     label.input-group-text(for='inputGroupSelect02') Status
-
+    
                 textarea(id="ckeditor" name='body')
     
                 div(style="height:15px")
@@ -102,6 +79,3 @@ html
     script(src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.17.1/ckeditor.js" integrity="sha512-VXEKi5eNc7ECuyIueuledlqeUWiJ7hcxBe9fnsCiVzeZ0XwJxAPemnq01/LBIBnp3i0szhvKNd9Us7fqNPsRmQ==" crossorigin="anonymous" referrerpolicy="no-referrer")
     script 
         include ../../../../public/javascript/story-create.js
-    script.
-        var body = !{JSON.stringify(storybody)};
-        CKEDITOR.instances.ckeditor.setData(body);

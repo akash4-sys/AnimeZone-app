@@ -1,0 +1,23 @@
+extends ../../sidenav.pug
+block content
+    h3 Edit Story
+    .row
+      form.col.s12(action='/dashboard/your-stories/updated/' + story._id,  method='POST')
+        input(type="hidden", name="_method" value = 'PUT')
+        .row
+          .input-field
+            input#title(type='text' name='title' value= story.title)
+            label(for='title') Title
+        .row
+          .input-field
+            select#status(name='status')
+              option(value='Publish') Publish
+              option(value='private' selected='') Private
+            label(for='status') Status
+        .row
+          .input-field
+            h5 Create Your Story:
+            textarea(id="body" name='body') #{story.body}
+        .row
+          input.btn(type='submit' value='Save')
+          a.btn.orange(href='/dashboard') Cancel
