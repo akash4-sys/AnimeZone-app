@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const dotenv = require('dotenv');
 
-mongoose.connect('mongodb://localhost/animezone',{
+mongoose.connect(process.env.MONGODB_URI,{
                     useNewUrlParser:true, 
                     useUnifiedTopology:true
                 }).then(() =>{
@@ -8,5 +9,5 @@ mongoose.connect('mongodb://localhost/animezone',{
                     console.log("Connection Successful");
 
                 }).catch(() =>{
-                    console.log("Some error");
+                    console.log("Database error");
                 })

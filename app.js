@@ -10,13 +10,13 @@ const flash = require('express-flash');
 const striptags = require('striptags');
 const moment = require('moment');
 const truncate = require('truncate');
-require('./config/db');
 const MongoStore = require('connect-mongo');
 
 const PORT = process.env.PORT || 80;
 
 //Load configuration
-dotenv.config({path:'./config/config.env'})
+dotenv.config({path:'./config/config.env'});
+require('./config/db');
 
 //Passport configuration
 require('./config/passport')(passport);
@@ -24,10 +24,10 @@ require('./config/passport')(passport);
 //intializing express and session and passport
 const app = express();
 app.use(session({
-    secret:'9809060498801mmtalipmneroc4tqr5nqu74r6bhjhgvappsthifnsdnflkuwioersalkjrandosdmsfdkldfas',
+    secret:process.env.SESSION_SECRET,
     resave:false,
     saveUninitialized:true,
-    store: MongoStore.create({mongoUrl: 'mongodb://localhost/animezone'})
+    store: MongoStore.create({mongoUrl: process.env.MONGODB_URI})
 }));
 
 app.use(express.urlencoded({extended:false}));
